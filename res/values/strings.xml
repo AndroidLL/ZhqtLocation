@@ -1,0 +1,38 @@
+<resources>
+
+    <string name="app_name">智普定位</string>
+    <string name="hello_world">智普定位</string>
+    <string name="cb">记住帐号</string>
+    <string name="hintName_show">请输入帐号</string>
+    <string name="hintPass_show">请输入密码</string>
+    <string name="remember">记住密码</string>
+    <string name="login">登录</string>
+    <string name="device_my">我的设备:</string>
+    <string name="save">保存</string>
+    <string name="loadmore">加载更多</string>
+    <string name="action_settings">Settings</string>
+    <string name="title1">GPS</string>
+    <string name="sub_title1">专注导航30年</string>
+    <string name="title2">BLE</string>
+    <string name="sub_title2">专注蓝牙30年</string>
+    <string name="positioning">定位</string>
+    <string name="a_fence">围栏</string>
+    <string name="nodata">未获取数据</string>
+
+    
+    
+    <string name="settings">属性设置</string>
+    <string name="real_time_positioning">实时定位</string>
+    <string name="location">实时定位</string>
+    <string name="electronic_fence">电子围栏</string>
+    <string name="history">历史轨迹</string>
+    
+    <string name="begin">开始时间</string>
+    <string name="choose_date">请选择日期：</string>
+    <string name="choose_time">请选择时间：</string>
+    <string name="end">结束时间</string>
+    
+    
+    <string name="tv_title_fence">电子围栏</string>
+    
+</resources>

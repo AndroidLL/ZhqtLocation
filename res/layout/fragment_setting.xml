@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+         <Button
+        android:id="@+id/bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="返回" />
+    -->
+
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="bt_save"
+        android:text="保存" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:text="参数设定"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/device_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:layout_marginBottom="10dip" >
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="设备编号:"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/device_electric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/device_id"
+        android:layout_marginBottom="10dip" >
+
+        <EditText
+            android:id="@+id/et_electric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/et_electric"
+            android:layout_alignParentLeft="true"
+            android:text="设备电量:"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/report_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/device_electric"
+        android:layout_marginBottom="10dip" >
+
+        <EditText
+            android:id="@+id/et_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/et_time"
+            android:layout_alignParentLeft="true"
+            android:text="上报时间(秒):"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gps_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/report_time"
+        android:layout_marginBottom="10dip" >
+
+        <TextView
+            android:id="@+id/gps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="GPS模式:"
+            android:textSize="20sp" />
+
+        <zhqt.lmw.zhqtlocationTool.SlipButton
+            android:id="@+id/slipButton"
+            android:layout_width="100dip"
+            android:layout_height="33dip"
+            android:layout_alignBottom="@id/gps"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/phone_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/gps_model"
+        android:layout_marginBottom="10dip" >
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="电话应答模式:"
+            android:textSize="20sp" />
+
+        <zhqt.lmw.zhqtlocationTool.SlipButton
+            android:id="@+id/slipButton_phone"
+            android:layout_width="100dip"
+            android:layout_height="33dip"
+            android:layout_alignBottom="@id/tv_phone"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/phone_model"
+        android:layout_marginBottom="10dip" >
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="设备时钟时区："
+            android:textSize="20sp" />
+
+        <zhqt.lmw.zhqtlocationTool.SlipButton
+            android:id="@+id/slipButton_time"
+            android:layout_width="100dip"
+            android:layout_height="55dip"
+            android:layout_alignBottom="@+id/tv_time"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/out_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/time"
+        android:layout_marginBottom="10dip" >
+
+        <TextView
+            android:id="@+id/tv_out_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="超速报警："
+            android:textSize="20sp" />
+
+        <zhqt.lmw.zhqtlocationTool.SlipButton
+            android:id="@+id/slipButton_speed"
+            android:layout_width="100dip"
+            android:layout_height="55dip"
+            android:layout_alignBottom="@id/tv_out_speed"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/out_speed_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/out_speed"
+        android:layout_marginBottom="10dip" >
+
+        <EditText
+            android:id="@+id/et_outSpeedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/et_outSpeedValue"
+            android:layout_alignParentLeft="true"
+            android:text="超速值(km/h):"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sos_move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/out_speed_value"
+        android:layout_marginBottom="10dip" >
+
+        <TextView
+            android:id="@+id/tv_sos_move"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="移动报警"
+            android:textSize="20sp" />
+
+        <zhqt.lmw.zhqtlocationTool.SlipButton
+            android:id="@+id/slipButton_sos_move"
+            android:layout_width="100dip"
+            android:layout_height="55dip"
+            android:layout_alignBottom="@id/tv_sos_move"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/distance_move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sos_move"
+        android:layout_marginBottom="10dip" >
+
+        <EditText
+            android:id="@+id/et_distance_move_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/et_distance_move_value"
+            android:layout_alignParentLeft="true"
+            android:text="移动距离(米)"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sos_shock"
+        android:layout_below="@id/distance_move"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:text="震动提示"
+            android:textColor="#9c9c9c" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/on" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bundle_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sos_shock"
+        android:layout_marginBottom="10dip" >
+
+        <EditText
+            android:id="@+id/et_bundle_phone_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/et_bundle_phone_value"
+            android:layout_alignParentLeft="true"
+            android:text="绑定号码："
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
